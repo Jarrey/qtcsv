@@ -4,7 +4,7 @@
 #include <QObject>
 #include <QtTest>
 
-#include "stringdata.h"
+#include "qtcsv/stringdata.h"
 
 class TestWriter : public QObject
 {
@@ -18,6 +18,7 @@ private Q_SLOTS:
     void testWriteInvalidArgs();
     void testWriteFromStringData();
     void testWriteFromVariantData();
+    void testWriteToFileWithDotsInName();
     void testWriteAppendMode();
     void testWriteWithNotDefaultSeparator();
     void testWriteWithHeader();
@@ -29,6 +30,8 @@ private Q_SLOTS:
 
 private:
     QString getFilePath() const;
+    QString getFilePathXLS() const;
+    QString getFilePathWithDotsInName() const;
     QtCSV::StringData getTestStringData(const int &symbolsInRow,
                                         const int &rowsNumber);
 };
